@@ -2,14 +2,21 @@ public class KitapKopyasi {
 
     private String barkod;
     private boolean oduncte;
+    private Kitap kitap;
 
-    public KitapKopyasi(String barkod) {
+    public KitapKopyasi(String barkod, Kitap kitap) {
         this.barkod = barkod;
+        this.kitap = kitap;
         this.oduncte = false;
+        kitap.kopyaEkle(this);
     }
 
     public String getBarkod() {
         return barkod;
+    }
+
+    public Kitap getKitap() {
+        return kitap;
     }
 
     public boolean isOduncte() {
@@ -26,6 +33,6 @@ public class KitapKopyasi {
 
     public void bilgiYazdir() {
         String durum = oduncte ? "oduncte" : "rafta";
-        System.out.println("Kopya: " + barkod + " [" + durum + "]");
+        System.out.println("Kopya: " + barkod + " (" + kitap.getAd() + ") [" + durum + "]");
     }
 }

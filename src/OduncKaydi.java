@@ -2,24 +2,30 @@ import java.time.LocalDate;
 
 public class OduncKaydi {
 
-    private int kullaniciNo;
-    private String kopyaBarkod;
+    private Kullanici kullanici;
+    private KitapKopyasi kopya;
     private LocalDate alisTarihi;
     private LocalDate iadeTarihi;
 
-    public OduncKaydi(int kullaniciNo, String kopyaBarkod, LocalDate alisTarihi) {
-        this.kullaniciNo = kullaniciNo;
-        this.kopyaBarkod = kopyaBarkod;
+    public OduncKaydi(Kullanici kullanici, KitapKopyasi kopya, LocalDate alisTarihi) {
+        if (!kopya.oduncVerilebilirMi()) {
+            throw new IllegalStateException(kopya.getBarkod() + " zaten oduncte!");
+        }
+        this.kullanici = kullanici;
+        this.kopya = kopya;
         this.alisTarihi = alisTarihi;
         this.iadeTarihi = null;
+
+        kopya.setOduncte(true);
+        kullanici.oduncKaydiEkle(this);
     }
 
-    public int getKullaniciNo() {
-        return kullaniciNo;
+    public Kullanici getKullanici() {
+        return kullanici;
     }
 
-    public String getKopyaBarkod() {
-        return kopyaBarkod;
+    public KitapKopyasi getKopya() {
+        return kopya;
     }
 
     public LocalDate getAlisTarihi() {
@@ -32,11 +38,13 @@ public class OduncKaydi {
 
     public void iadeEt() {
         this.iadeTarihi = LocalDate.now();
+        kopya.setOduncte(false);
     }
 
     public void bilgiYazdir() {
         String iade = (iadeTarihi == null) ? "henuz iade edilmedi" : iadeTarihi.toString();
-        System.out.println("Odunc: kullanici #" + kullaniciNo + " -> kopya " + kopyaBarkod
+        System.out.println("Odunc: " + kullanici.getAd() + " " + kullanici.getSoyad()
+                + " -> " + kopya.getKitap().getAd() + " (" + kopya.getBarkod() + ")"
                 + " | alis: " + alisTarihi + " | iade: " + iade);
     }
 }
