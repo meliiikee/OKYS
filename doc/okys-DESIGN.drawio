@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="usecase" name="Use Case Diyagramı">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" page="1" pageWidth="850" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sistem" value="OKYS - Kütüphane Yönetim Sistemi" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="220" y="30" width="360" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="uye" value="Üye" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="160" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gorevli" value="Kütüphane Görevlisi" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="300" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" value="Kitap Ara" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" value="Kitap Ödünç Al" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" value="Kitap İade Et" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="240" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" value="Kitap Ekle" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="320" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" value="Kitap Kopyası Ekle" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" value="Kullanıcı Kaydet" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=none;html=1;" edge="1" parent="1" source="uye" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;" edge="1" parent="1" source="uye" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;" edge="1" parent="1" source="uye" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;" edge="1" parent="1" source="gorevli" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;" edge="1" parent="1" source="gorevli" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="endArrow=none;html=1;" edge="1" parent="1" source="gorevli" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="endArrow=none;html=1;" edge="1" parent="1" source="gorevli" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="endArrow=none;html=1;" edge="1" parent="1" source="gorevli" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="class" name="Class Diyagramı">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" page="1" pageWidth="850" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kitap" value="Kitap" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="kitap_a" value="- isbn : String&lt;br&gt;- ad : String&lt;br&gt;- yazar : String&lt;br&gt;- yayinYili : int&lt;br&gt;- kopyalar : List&amp;lt;KitapKopyasi&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kitap">
+          <mxGeometry y="26" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kitap_l" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="kitap">
+          <mxGeometry y="116" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kitap_m" value="+ kopyaEkle(kopya : KitapKopyasi) : void&lt;br&gt;+ raftakiKopyaSayisi() : int&lt;br&gt;+ bilgiYazdir() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kitap">
+          <mxGeometry y="124" width="280" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="kopya" value="KitapKopyasi" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="280" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="kopya_a" value="- barkod : String&lt;br&gt;- oduncte : boolean&lt;br&gt;- kitap : Kitap" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kopya">
+          <mxGeometry y="26" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kopya_l" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="kopya">
+          <mxGeometry y="86" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kopya_m" value="+ oduncVerilebilirMi() : boolean&lt;br&gt;+ bilgiYazdir() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kopya">
+          <mxGeometry y="94" width="280" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kul" value="Kullanici" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="280" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="kul_a" value="- kullaniciNo : int&lt;br&gt;- ad : String&lt;br&gt;- soyad : String&lt;br&gt;- oduncKayitlari : List&amp;lt;OduncKaydi&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kul">
+          <mxGeometry y="26" width="280" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="kul_l" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="kul">
+          <mxGeometry y="102" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kul_m" value="+ oduncKaydiEkle(kayit : OduncKaydi) : void&lt;br&gt;+ bilgiYazdir() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="kul">
+          <mxGeometry y="110" width="280" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="odunc" value="OduncKaydi" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="340" width="280" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="odunc_a" value="- kullanici : Kullanici&lt;br&gt;- kopya : KitapKopyasi&lt;br&gt;- alisTarihi : LocalDate&lt;br&gt;- iadeTarihi : LocalDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="odunc">
+          <mxGeometry y="26" width="280" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="odunc_l" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="odunc">
+          <mxGeometry y="102" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="odunc_m" value="+ iadeEt() : void&lt;br&gt;+ bilgiYazdir() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="odunc">
+          <mxGeometry y="110" width="280" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;" edge="1" parent="1" source="kitap" target="kopya">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1s" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="20" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r1t" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="kopya" target="odunc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2s" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="6" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2t" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="kul" target="odunc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3s" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3t" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
