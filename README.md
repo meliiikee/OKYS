@@ -19,5 +19,3 @@ Bir kütüphanedeki kitapların, kitap kopyalarının (fiziksel nüshaların), k
 javac -encoding UTF-8 -d out src/*.java
 java -cp out Main
 ```
-
-Windows'ta `calistir.bat` dosyasına çift tıklamak da yeterlidir.
